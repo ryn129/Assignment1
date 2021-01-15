@@ -6,7 +6,7 @@ struct Node{
     Node *next; 
 } *head, *tail, *curr;
 
-Node *createNode(int num){
+Node *buatNode(int num){
     Node *Nodebaru = (Node*)malloc(sizeof(Node));
     Nodebaru->num = num;
     Nodebaru->next = NULL;

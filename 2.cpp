@@ -25,23 +25,23 @@ void pushHead(int num){
 }
 
 
-int minNode(Node* head) {  
+int minNode(Node* head){  
     Node *current = head;  
     int min;  
       
-    if(!head) {  
+    if(!head){  
         return 0;  
     }  
-    else {  
-        min = head->num;  
+    else{  
+    min = head->num;  
           
-        while(current != NULL){  
+    while(current != NULL){  
             
-             if(min > current->num) {  
-                 min = current->num;  
-             }  
-             current= current->next;  
-        }          
+    if(min > current->num) {  
+    min = current->num;  
+    } 
+    current= current->next;  
+    }          
     }  
     return min;
 }  
@@ -50,19 +50,19 @@ int maxNode(Node* head){
     Node *current = head;  
     int max;  
       
-    if(!head) {  
-        return 0;
+    if(!head){  
+    return 0;
     }  
-    else {  
+    else{  
           
-        max = head->num;  
+    max = head->num;  
           
-        while(current != NULL){    
-             if(max < current->num) {  
-                 max = current->num;  
-             }  
-             current = current->next;  
-        }               
+    while(current != NULL){    
+    if(max < current->num) {  
+    max = current->num;  
+    }  
+    current = current->next;  
+    }               
     }  
     return max;
 }  

@@ -6,41 +6,39 @@ struct Node{
 
 } *head, *tail;
 
-Node *createNode(int num){
-    Node *temp = (Node*)malloc(sizeof(Node));
-    temp->num = num;
-    temp->next = NULL;
-    return temp;
+Node *buatNode(int num){
+    Node *Nodebaru = (Node*)malloc(sizeof(Node));
+    Nodebaru->num = num;
+    Nodebaru->next = NULL;
+    return Nodebaru;
 }
-void pushTail(int num) {
-  Node *temp = createNode(num);
-  if(!head) 
-  { 
-    head = tail = temp;
-  } else 
-  { 
-    tail->next = temp; 
-    tail = temp; 
+
+void pushTail(int num){
+  Node *temp = buatNode(num);
+  if(!head){ 
+  head = tail = temp;
+  } 
+  else{ 
+  tail->next = temp; 
+  tail = temp; 
   }
 }
 
-int findmid(Node *head, int x) { 
-    Node * current = head;
+int findmid(Node *head, int x){ 
+    Node *curr = head;
     int temp = 0;
-    while(current != NULL) 
-    { 
-        if(temp == x)
-        {
-            return current->num;
-        } 
-        current = current->next; 
-        temp++;
+    while(curr != NULL){ 
+    if(temp == x)
+    {
+    return curr->num;
+    } 
+    curr = curr->next; 
+    temp++;
     } 
 }
 
 
-int main()
-{
+int main(){
 	int data,angka;
 	scanf("%d", &data);
 	for(int i = 0; i < data; i++){

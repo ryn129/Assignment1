@@ -16,37 +16,33 @@ Node *buatNode(int num){
 
 void pushTail(int num) {
   Node *temp = buatNode(num);
-  if(!head) 
-  { 
+  if(!head){ 
     head = tail = temp;
-  } else 
-  { 
+  } 
+  else{ 
     tail->next = temp; 
     tail = temp; 
   }
 }
 
-void swap(struct Node *a, struct Node *b) 
-{ 
+void swap(Node *a,Node *b){ 
     int temp = a->num; 
     a->num = b->num; 
     b->num = temp; 
 } 
-void bubbleSort(struct Node *head) 
-{ 
+
+void BubbleSort(Node *head){ 
     int swapped, i; 
-    struct Node *ptr1; 
-    struct Node *lptr = NULL; 
+    Node *ptr1; 
+    Node *lptr = NULL; 
     if (head == NULL) 
         return; 
     do
     { 
         swapped = 0; 
         ptr1 = head; 
-        while (ptr1->next != lptr) 
-        { 
-            if (ptr1->num < ptr1->next->num) 
-            {  
+        while (ptr1->next != lptr){ 
+            if (ptr1->num < ptr1->next->num){  
                 swap(ptr1, ptr1->next); 
                 swapped = 1; 
             } 
@@ -60,16 +56,14 @@ void bubbleSort(struct Node *head)
 
 void printlinkedlist(){
     Node *curr=head;
-    if(!head)
-    {
+    if(!head){
         return;
-    } else
-    {
+    } 
+    else{
         curr = head;
-        while(curr)
-        {
-            printf("%d ", curr->num);
-            curr = curr->next;
+        while(curr){
+        printf("%d ", curr->num);
+        curr = curr->next;
         }
     }   
 }
@@ -82,7 +76,7 @@ int main(){
     scanf("%d",&angka);getchar();
     pushTail(angka);
     }
-    bubbleSort(head);
+    BubbleSort(head);
     printlinkedlist();
     return 0;
 }

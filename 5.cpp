@@ -7,33 +7,29 @@ struct Node{
 
 } *head, *tail;
 
-Node *createNode(int num){
-    Node *temp = (Node*)malloc(sizeof(Node));
-    temp->num = num;
-    temp->next = NULL;
-    return temp;
+Node *buatNode(int num){
+    Node *Nodebaru = (Node*)malloc(sizeof(Node));
+    Nodebaru->num = num;
+    Nodebaru->next = NULL;
+    return Nodebaru;
 }
 
 void pushHead(int num){
-    Node *temp = createNode(num);
-    if(!head) 
-    {
+    Node *temp = buatNode(num);
+    if(!head){
         head = tail = temp;
-    } else
-    {
+    } 
+    else{
         temp->next = head;
         head = temp;
     }
 }
 
-int search(Node* head, int flg, int x) 
-{ 
+int search(Node* head, int flg, int x){ 
     Node* current = head;
     int temp = 0;
-    while(current != NULL) 
-    { 
-        if(temp == flg-x)
-        {
+    while(current != NULL){ 
+        if(temp == flg-x){
             return current->num;
         } 
         current = current->next; 
@@ -42,8 +38,7 @@ int search(Node* head, int flg, int x)
     return 0;
 }
 
-int main()
-{
+int main(){
 	int data,angka,flg= 0,find;
 	scanf("%d", &data);
 	for(int i = 0; i <data; i++){	
